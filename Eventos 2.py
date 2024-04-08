@@ -1,15 +1,16 @@
 opcion=0
-while opcion != 7:
+while opcion != 8:
     print("---------------------" )
     print("--------Menu--------")
     print("----------------------")
     print("1. Imprimir todo")
     print("2. Ganancia maxima")
     print("3. Ganancia minima")
-    print("4. Año")
+    print("4. Datos por Año")
     print("5. Descripcion general de ganancias")
-    print("6. Ganancias mayor a")
-    print("7. Salir")
+    print("6. Ganancias mayor a ")
+    print("7. Datos por mes")
+    print("8. Salir")
     print("-------------------------")
     opcion = int(input("Ingresa opcion: "))
     match opcion:
@@ -42,6 +43,11 @@ while opcion != 7:
           a= int(input("Ingrese la cantidad : "))
           print (df[df["Ganancia"]>=a])
       case 7:
+          import pandas as pd
+          df = pd.read_excel("Eventos.xlsx")
+          a = input("El mes : ")
+          print(df[df["Mes de evento"] == a])
+      case 8:
           print("Elegiste salir")
       case _:
         print("error:Opción no válida.")
